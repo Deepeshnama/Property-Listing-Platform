@@ -3,13 +3,16 @@ import { Schema, model } from "mongoose";
 const propertySchema = new Schema({
   Property_ID: { type: String },
   Title: { type: String },
-  Location: { type: String, index: true },
+    Location: {
+        type: String,
+        index: true
+    },
   Type: {
     type: String,
     enum: ["House", "Apartment", "Office"],
     index: true,
   },
-  Bedroom: Number,
+  Bedrooms: Number,
   Bathrooms: Number,
   Status: {
     type: String,
@@ -20,6 +23,10 @@ const propertySchema = new Schema({
     type: [String],
     index: true,
   },
-  Image_URL: String,
-  Price: Number,
+  Image_URL: { type: String },
+  Price: { type: Number },
 });
+
+const Property = model("property", propertySchema);
+
+export { Property };
