@@ -3,10 +3,10 @@ import { Schema, model } from "mongoose";
 const propertySchema = new Schema({
   Property_ID: { type: String },
   Title: { type: String },
-    Location: {
-        type: String,
-        index: true
-    },
+  Location: {
+    type: String,
+    index: true,
+  },
   Type: {
     type: String,
     enum: ["House", "Apartment", "Office"],

@@ -79,20 +79,19 @@ const filterProperties = async (req, res) => {
 
 const getPropertById = async (req, res) => {
   try {
-    const { id } = req.params 
-    
-    const getProperty = await Property.findById(id)
+    const { id } = req.params;
+
+    const getProperty = await Property.findById(id);
 
     if (!getProperty) {
-      return res.status(400).json({msg : "No Property Available"})
+      return res.status(400).json({ msg: "No Property Available" });
     }
 
-    return res.status(200).json({msg : "No property available"})
-
+    return res.status(200).json({ msg: "No property available" });
   } catch (error) {
-    console.log(error.message)
-    res.status(500).json({error : "Internal server error"})
+    console.log(error.message);
+    res.status(500).json({ error: "Internal server error" });
   }
-}
+};
 
-export { getAllProperties , filterProperties , getPropertById };
+export { getAllProperties, filterProperties, getPropertById };
