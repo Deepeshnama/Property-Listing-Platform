@@ -11,6 +11,6 @@ propertyRoutes.get("/allProperty", getAllProperties);
 
 propertyRoutes.post("/filter", filterProperties);
 
-propertyRoutes.get("/property/:id", getPropertById);
+propertyRoutes.get("/getPropertybyId/:id", getPropertById);
 
 export default propertyRoutes;
