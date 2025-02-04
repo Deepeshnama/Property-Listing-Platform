@@ -9,7 +9,7 @@ app.use(express.json())
 app.use("/property" , propertyRoutes )
 
 app.listen(2300, () => {
+    connectDB()
     console.log("Server is listening on PORT : 2300")
 
-    connectDB()
 })
